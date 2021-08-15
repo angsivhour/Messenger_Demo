@@ -16,6 +16,7 @@
 		857DB8BC26B2952300952EC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 857DB8BA26B2952300952EC7 /* LaunchScreen.storyboard */; };
 		857DB8CB26B2997D00952EC7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857DB8CA26B2997D00952EC7 /* LoginViewController.swift */; };
 		857DB8CD26B2999A00952EC7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857DB8CC26B2999A00952EC7 /* RegisterViewController.swift */; };
+		8599BD0E26C528B200A7A08A /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8599BD0D26C528B200A7A08A /* DatabaseManager.swift */; };
 		85FD927526B2E8DC003B0FD1 /* PhotoViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD927426B2E8DC003B0FD1 /* PhotoViewerViewController.swift */; };
 		85FD927726B2E8E5003B0FD1 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD927626B2E8E5003B0FD1 /* VideoPlayerViewController.swift */; };
 		85FD927926B2E926003B0FD1 /* NewConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD927826B2E926003B0FD1 /* NewConversationViewController.swift */; };
@@ -38,6 +39,7 @@
 		857DB8BD26B2952300952EC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		857DB8CA26B2997D00952EC7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		857DB8CC26B2999A00952EC7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		8599BD0D26C528B200A7A08A /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		85FD927426B2E8DC003B0FD1 /* PhotoViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerViewController.swift; sourceTree = "<group>"; };
 		85FD927626B2E8E5003B0FD1 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		85FD927826B2E926003B0FD1 /* NewConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				857DB8AF26B2952100952EC7 /* AppDelegate.swift */,
 				857DB8B126B2952100952EC7 /* SceneDelegate.swift */,
 				85FD927D26B2F25A003B0FD1 /* Extensions.swift */,
+				8599BD0D26C528B200A7A08A /* DatabaseManager.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				857DB8CB26B2997D00952EC7 /* LoginViewController.swift in Sources */,
+				8599BD0E26C528B200A7A08A /* DatabaseManager.swift in Sources */,
 				857DB8CD26B2999A00952EC7 /* RegisterViewController.swift in Sources */,
 				85FD927926B2E926003B0FD1 /* NewConversationViewController.swift in Sources */,
 				857DB8B426B2952100952EC7 /* ConversationViewController.swift in Sources */,

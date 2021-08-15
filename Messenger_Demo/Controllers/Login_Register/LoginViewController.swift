@@ -34,7 +34,7 @@ class LoginViewController: UIViewController {
         field.placeholder = "Email Address..."
         field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 0))
         field.leftViewMode = .always
-        field.backgroundColor = .white
+        field.backgroundColor = .systemBackground
         return field
     }()
     
@@ -50,7 +50,7 @@ class LoginViewController: UIViewController {
         field.isSecureTextEntry = true
         field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 0))
         field.leftViewMode = .always
-        field.backgroundColor = .white
+        field.backgroundColor = .systemBackground
         return field
     }()
     
@@ -58,7 +58,7 @@ class LoginViewController: UIViewController {
         let button = UIButton()
         button.setTitle("Log In", for: .normal)
         button.backgroundColor = .link
-        button.setTitleColor(.white, for: .normal)
+        button.setTitleColor(.systemBackground, for: .normal)
         button.layer.cornerRadius = 12
         button.layer.masksToBounds = true
         button.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
@@ -68,7 +68,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Log In"
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Register", style: .done, target: self, action: #selector(didTapRegister))
         
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
@@ -86,7 +86,7 @@ class LoginViewController: UIViewController {
         super.viewDidLayoutSubviews()
         
         scrollView.frame = view.bounds
-        let size = scrollView.width/3
+        let size = scrollView.width/4
         imageView.frame = CGRect(x: (scrollView.width - size)/2, y: 20, width: size, height: size)
         emailField.frame = CGRect(x: 30, y: imageView.bottom+20, width: scrollView.width-60, height: 52)
         passwordField.frame = CGRect(x: 30, y: emailField.bottom+20, width: scrollView.width-60, height: 52)
@@ -102,7 +102,10 @@ class LoginViewController: UIViewController {
             return
         }
         
-        FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+        FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+            
+            guard let strongSelf = self else { return }
+            
             guard let result = authResult, error == nil else {
                 print("Failed to log in with email: \(email)")
                 return
@@ -110,6 +113,7 @@ class LoginViewController: UIViewController {
             
             let user = result.user
             print("Logged In User \(user)")
+            strongSelf.navigationController?.dismiss(animated: true, completion: nil)
         }
     }
     
